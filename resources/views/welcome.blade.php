@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/0ce84235fb.js" crossorigin="anonymous"></script>
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -22,6 +23,9 @@
             .font3{font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; line-height: 29px;}
             .font4{font-family:system-ui,-apple-system; font-size: 11px; font-weight: 300; line-height: 20px;}
             .font5{font-family:system-ui,-apple-system; font-size: 12px; font-weight: 400; line-height: 20px;}
+
+
+
             li{list-style-type: none}
             .sopra0{position: relative; left: 30px; bottom: 120px;}
             .parent{position: static; display: inline-block}
@@ -134,7 +138,7 @@
     </nav>
 {{--    BANNER--}}
 
-                <div class="max-w-6xl  sm:px-6 lg:px-8 pl-0 ml-0 bg-white  position-static">
+                <section class="max-w-6xl  px-8   bg-white  position-static mt-2">
                     <img src="/app/ganhbd/public/img/slide-5.jpeg" class="w-[100%] h-auto pt-5 parent position-sticky">
                     <div class="position-relative sopra0 font3 text-md">
                         <p class=" h-[40px] w-[200px] bg-[#6091ba] text-white px-3 py-1.5  uppercase mb-1">Come to OPEN DAYS</p>
@@ -145,43 +149,136 @@
 
 {{--MAIN SECTION        --}}
 
-                    {{--    first column                --}}
-    <main class="flex inline-flex w-full mt-8  ">
-                    <div class="w-[30%]  mr-5 border-t bg-gray-100 text-[#2f506c] p-3 pl-0 ">
-                        <a class="font3 text-[#2f506c] text-lg p-3 pl-0  pt-[13px] border-t-2 border-[#6091ba] ">  &nbsp &nbsp About School &nbsp</a>
-                        <img src="/app/ganhbd/public/img/img1.jpeg" class="w-[200px] h-[150px] pl-[15%] pt-[10px]"/>
-                    </div>
+                    {{--    first column    ABOUT            --}}
+    <main class="flex inline-flex w-full   ">
+                    <div class="w-[20%]  mr-5   text-[#2f506c] pb-3  ">
+                        <section class="bg-gray-100 mb-3 h-[200px] pt-3">
+                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0 pt-[12px] border-t-2 border-[#6091ba] ">
+                                &nbsp &nbsp About School &nbsp</a>
+                            <img src="/app/ganhbd/public/img/img1.jpeg" class="w-[150px] h-[120px] pl-[10%] pt-[10px]"/>
+                        </section>
+                        <section class="mt-5 bg-gray-100 pt-3 h-[400px]">
+                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0  pt-[12px] border-t-2 border-[#6091ba] ">
+                                &nbsp &nbsp Day timetable &nbsp
+                            </a>
+                            <table class="w-[180px] h-[300px] pl-6 mt-2 m-4" >
+                            <tbody class="font4 pl-6 uppercase text-gray-600">
 
-                {{--    second column                --}}
-                    <div class="w-[50%] mr-5 border-t bg-gray-100 text-[#2f506c] p-3 pt-[13px] pl-0">
-                        <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3">Last news</a>
-                        <section >
-                            <div>
-                                <img>
-                                <title class="font4 text-[#2f506c]">Announcement</title>
-                                <div>some text</div>
-                                <div>Date</div>
+                                <tr class="font4   py-2  ">
+                                    <td class = "w-[30%] px-2">1 LESSON</td>
+                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
+                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
+                                </tr>
+                                <tr class="font4 border-t  py-2 ">
+                                    <td class = "w-[30%] px-2">2 LESSON</td>
+                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
+                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
+                                </tr>
+                                <tr class="font4 border-t  py-3 ">
+                                    <td class = "w-[30%] px-2">3 LESSON</td>
+                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
+                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
+                                </tr>
+                                <tr class="font4 border-t border-b py-2 ">
+                                    <td class = "w-[30%] px-2">4 LESSON</td>
+                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
+                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
+                                </tr>
+                                <tr class="font4 border-t  py-2 ">
+                                    <td class = "w-[30%] px-2">5 LESSON</td>
+                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
+                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <a class="font3 ml-4 mb-4 text-blue-400">See full timetable > </a>
+                        </section>
+
+                        <section class="bg-gray-100 my-3  mt-4 h-[200px] pt-3">
+                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0 pt-[12px] border-t-2 border-[#6091ba] ">
+                                &nbsp &nbsp Weather &nbsp</a>
+                            <div class="p-4 w-[200px]">
+                                <a href="https://yandex.it/weather/geneva?lat=446.203548&amp;lon=6.140003" target="_blank">
+                                    <img src="https://info.weather.yandex.net/163/2_white.ru.png?domain=it" border="0" alt="Weather">
+                                    <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0">
+                                </a>
                             </div>
                         </section>
                     </div>
 
 
-                {{--      third column              --}}
-                    <div class="w-[20%]  border-t bg-gray-100 text-[#2f506c] p-3 pt-[13px] pl-0 ">
-                        <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3">Navigation</a>
-                        <ul class="font5 text-[#6c9abf] pl-4">
-                            <li class="py-1 pl-1"> > Main</li>
-                            <li class="py-1 pl-1"> > News</li>
-                            <li class="py-1 pl-1"> > History</li>
-                            <li class="py-1 pl-1"> > Activities</li>
-                            <li class="py-1 pl-1"> > Concours</li>
-                            <li class="py-1 pl-1"> > Olympiades</li>
-                        </ul>
+                {{--    second column      NEWS          --}}
+                    <div class="w-[60%] mr-5  bg-gray-100 text-[#2f506c] p-3 pt-0  pb-0 pt-[12px] pl-0">
+                        <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[11px] px-3">Last news</a>
+                        <section class="" >
+                            {{--   news1     --}}
+                            <div class="border-b">
+                                <div class="flex inline-flex">
+                                    <img src="/app/public/img/" class="w-[30px] h-[30px] pl-3">
+                                    <div class="font3 text-[#7fa7cb] pl-4">Announcement</div>
+                                </div>
+                                <p class="font4 pl-12">School supplies</p>
+
+                                <div class="flex inline-flex font4 text-gray-600 pb-4 w-full justify-between">
+                                    <div class="flex inline-flex font4 text-gray-600 pb-4  w-[85%]">
+                                        <i class="fa fa-calendar fa-sm  p-3 pr-2 pl-12 text-[text-gray-500]"></i>
+                                        <p class="pt-0.5 ">21.06.2023</p>
+                                        <i class="fas fa-comments fa-sm  p-3 pr-1 pl-4 text-[text-gray-500]"></i>
+                                        <p class="pr-4">0</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="ml-1 bi bi-eye-fill mt-1" viewBox="0 0 16 16">
+                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                        </svg>
+                                        <p class="pl-1 ">20</p>
+                                    </div>
+                                    <p class="w-[15%] text-blue-400">Read more..<span class="font3 font-weight-bolder">></span></p>
+                                </div>
+                            </div>
+
+                        </section>
+                        <p class="text-blue-400 p-1 pl-4 font3 pt-6 h-[60px] ">Read all .. > </p>
+                    </div>
+
+
+                {{--      third column   NAVIGATION           --}}
+                    <div class="w-[20%]    ">
+                        <section class="border-t bg-gray-100 text-[#2f506c] p-3 pt-[13px] pl-0">
+                            <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3">Navigation</a>
+                            <ul class="font5 text-[#6c9abf] pl-4">
+                                <li class="py-1 pl-1"> > Main</li>
+                                <li class="py-1 pl-1"> > News</li>
+                                <li class="py-1 pl-1"> > History</li>
+                                <li class="py-1 pl-1"> > Activities</li>
+                                <li class="py-1 pl-1"> > Concours</li>
+                                <li class="py-1 pl-1"> > Olympiades</li>
+                            </ul>
+                        </section>
+                        <section class=" bg-gray-100 text-[#2f506c] p-3 pt-[13px] pl-0 mt-4 h-[250px]">
+                            <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3">Direction</a>
+                            <div class="pl-4">Name Surname</div>
+                            <img src="" class="w-[160px] h-[120px] pl-4 pt-4">
+
+                        </section>
                     </div>
                </main>
 
 
-</div>
+                    <section>
+                        <div class="pl-4 p-4 font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3 mt-4">Our team</div>
+                        <div class="product owl-item-slide">
+                            <a class="product-link" href="/teams?lang=ru&amp;pkid=1679398890812538" target="_blank">
+                                <div class="product-img-wrap" style="width: auto; height: 100px; margin: 0 auto;">
+                                    <img class="product-img" src="/files/sites/1678379566328140/files/widgets/block_footer_slider_banners/0/ru/1613807741_large__js_uchitel_metematiki__0f8ce93b6435ccc7950d5e6a3b278392.jpg" style="width: auto; height: 100px; margin: 0 auto;">
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </section>
+
+</section>
+
+
 
 {{-- JAVA SCRIPT--}}
                         <a href="javascript:click();" class="p-2 rounded">click and get the prize</a>
@@ -194,74 +291,30 @@
 
 
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">PARASHA</a>
-                                </div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">SERVICES</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">NEWS</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
 
 
-
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">EVENTS</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
+                    Parasha de la semaine
                 </div>
 
+                <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
+                    Services proposed
+                </div>
+
+                <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
+                    News
+                </div>
+
+                <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
+                    Events
+                </div>
 
                 <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
                     Gallerie de photos
                 </div>
 
                 <div class="flex justify-center mt-4  pt-4 text-gray-500 w-full h-[400px] bg-white rounded shadow">
-                    A propos du gan
+                    A propos de l'école
                 </div>
 
 
@@ -289,10 +342,46 @@
 <footer class="w-full">
 
     <section class="bg-[#444444] text-white flex inline-flex h-[245px] w-full font3 text-[17px]">
-        <div class="w-[20%] p-5 ml-12">Navigation</div>
+        <div class="w-[20%] p-5 ml-12">
+            <p>Navigation</p>
+            <ul class="font5 text-[#6c9abf] pl-4">
+                <li class="py-1 pl-1"> > Main</li>
+                <li class="py-1 pl-1"> > News</li>
+                <li class="py-1 pl-1"> > History</li>
+                <li class="py-1 pl-1"> > Study materials</li>
+                <li class="py-1 pl-1"> > Jobs</li>
+                <li class="py-1 pl-1"> > Site map</li>
+
+            </ul>
+        </div>
         <div class="w-[20%] p-5 ml-12">Questionnaire</div>
         <div class="w-[20%] p-5 ml-12">Statistics</div>
-        <div class="w-[20%] p-5">Contacts</div>
+        <div class="w-[20%] p-5">
+            <p>Contacts</p>
+            <data class="font5 text-[#6c9abf]  ">
+                <div class="flex inline-flex pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <div class="pl-2">Centre ville 12</div>
+                </div>
+
+                <div class="flex inline-flex pl-2 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <div class="pl-2">43‒30‒95, 43‒08‒88</div>
+                </div>
+
+
+                <div class="flex inline-flex pl-2 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                    </svg>
+                    <div class="pl-2">contact@habad.ch</div>
+                </div>
+            </data>
+        </div>
     </section>
 
     <div class="flex justify-center  sm:items-center sm:justify-between bg-[#2b2b2b] font2 h-[36px]">
@@ -323,7 +412,7 @@
 
 
         <div class="mx-4 text-center  text-gray-200 text-right  font2 ">
-            for <span class="text-[#7594ae]">OM School</span> v1.0 ©  <?=date('Y') ?>
+            for <span class="text-[#7594ae]">Ohalei Menahem School</span> v1.0 ©  <?=date('Y') ?>
         </div>
     </div>
 
