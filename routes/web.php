@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'PagesController@index');
+
+
 Route::get('/inner', function () {
     return view('inner');
 });
@@ -25,3 +27,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+
+//admenu
+Route::get('/advantages', 'PagesController@index')->name('advantages');
+Route::get('/program', 'PagesController@index')->name('program');
+Route::get('/teachers', 'PagesController@index')->name('teachers');
+Route::get('/enroll', 'PagesController@index')->name('enroll');
+Route::get('/fees', 'PagesController@index')->name('fees');
+Route::get('/about', 'PagesController@index')->name('about');
+Route::get('/partners', 'PagesController@index')->name('partners');
