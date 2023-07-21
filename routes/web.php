@@ -31,10 +31,13 @@ require __DIR__.'/auth.php';
 
 
 //admenu
-Route::get('/advantages', 'PagesController@index')->name('advantages');
-Route::get('/program', 'PagesController@index')->name('program');
-Route::get('/teachers', 'PagesController@index')->name('teachers');
+Route::get('/advantages', 'PagesController@advantages')->name('advantages');
+Route::get('/program', 'PagesController@program')->name('program');
+Route::get('/teachers', 'TeachersController@index')->name('teachers');
 Route::get('/enroll', 'PagesController@index')->name('enroll');
 Route::get('/fees', 'PagesController@index')->name('fees');
-Route::get('/about', 'PagesController@index')->name('about');
+Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/partners', 'PagesController@index')->name('partners');
+Route::get('/history', 'PagesController@history')->name('history');
+
+Route::resource('/novitas', 'NovitasController');

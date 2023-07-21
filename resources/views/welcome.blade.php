@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://kit.fontawesome.com/0ce84235fb.js" crossorigin="anonymous"></script>
-        <title>Laravel</title>
+        <title>Ecole Ohalei Menahem</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
             .font3{font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; line-height: 29px;}
             .font4{font-family:system-ui,-apple-system; font-size: 11px; font-weight: 300; line-height: 20px;}
             .font5{font-family:system-ui,-apple-system; font-size: 12px; font-weight: 400; line-height: 20px;}
-
+            h3{font-weight: bold; font-size: 13px;}
 
 
             li{list-style-type: none}
@@ -107,7 +107,7 @@
                         </a>
 
 
-                        <a href="/" class="inline-flex"><div class="pt-[10%] pl-2 text-lg  ">School {{$habad['name']}}</div></a>
+                        <a href="{{url('/')}}" class="inline-flex"><div class="pt-[10%] pl-2 text-lg  ">School {{$habad['name']}}</div></a>
 
                 </div>
 
@@ -116,13 +116,13 @@
 
                     <div class="inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
                         <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                        </svg><p class="ml-2"> {{$habad['tel']}}</p>
+                        </svg><p class="ml-2"><a href="javascript: openWindow()"> {{$habad['tel']}}</a></p>
                     </div>
                     <div class="inline-flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                         </svg>
-                        <p class="ml-2"> {{$habad['email']}}</p>
+                        <p class="ml-2"><a href="mailto:{{$habad['email']}}"> {{$habad['email']}}</a></p>
                     </p>
                 </div>
 
@@ -153,129 +153,43 @@
 
 {{--MAIN SECTION        --}}
 
+
 {{--    first column    ABOUT            --}}
     <main class="flex inline-flex w-full   ">
-                    <div class="w-[20%]  mr-5   text-[#2f506c] pb-3  ">
-                        <section class="bg-gray-50 mb-3 h-[200px] pt-3">
-                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0 pt-[12px] border-t-2 border-[#6091ba] ">
-                                &nbsp &nbsp About School &nbsp</a>
-                            <img src="/app/ganhbd/public/img/img1.jpeg" class="w-[150px] h-[120px] pl-[10%] pt-[10px]"/>
-                        </section>
-                        <section class="mt-5 bg-gray-50 pt-3 h-[400px]">
-                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0  pt-[12px] border-t-2 border-[#6091ba] ">
-                                &nbsp &nbsp Day timetable &nbsp
-                            </a>
-                            <table class="w-[180px] h-[300px] pl-6 mt-2 m-4" >
-                            <tbody class="font4 pl-6 uppercase text-gray-600">
-
-                                <tr class="font4   py-2  ">
-                                    <td class = "w-[30%] px-2">1 LESSON</td>
-                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
-                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
-                                </tr>
-                                <tr class="font4 border-t  py-2 ">
-                                    <td class = "w-[30%] px-2">2 LESSON</td>
-                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
-                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
-                                </tr>
-                                <tr class="font4 border-t  py-3 ">
-                                    <td class = "w-[30%] px-2">3 LESSON</td>
-                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
-                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
-                                </tr>
-                                <tr class="font4 border-t border-b py-2 ">
-                                    <td class = "w-[30%] px-2">4 LESSON</td>
-                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
-                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
-                                </tr>
-                                <tr class="font4 border-t  py-2 ">
-                                    <td class = "w-[30%] px-2">5 LESSON</td>
-                                    <td class = "w-[30%] font4">11.05 - 11.50</td>
-                                    <td class = "w-[30%] font4">16.55 - 17.40</td>
-                                </tr>
-                            </tbody>
-                            </table>
-                            <a class="font3 ml-4 mb-4 text-blue-400 inline-flex items-center">See full timetable
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right text-blue-400" viewBox="0 0 16 16">
-                                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                                </svg>
-                            </a>
-                        </section>
-{{--WEATHER WIDGET--}}
-                        <section class="bg-gray-50 my-3  mt-4 h-[200px] pt-3">
-                            <a class="font3 text-[#2f506c] text-lg p-3 pl-0 pt-[12px] border-t-2 border-[#6091ba] ">
-                                &nbsp &nbsp Weather &nbsp</a>
-                            <div class="p-4 w-[200px]">
-                                <a href="https://yandex.it/weather/geneva?lat=446.203548&amp;lon=6.140003" target="_blank">
-                                    <img src="https://info.weather.yandex.net/163/2_white.ru.png?domain=it" border="0" alt="Weather">
-                                    <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0">
-                                </a>
-                            </div>
-                        </section>
-                    </div>
 
 
-{{--    second column      NEWS          --}}
-                    <div class="w-[60%] mr-5  bg-gray-50 text-[#2f506c] p-3 pt-0  pb-0 pt-[12px] pl-0">
-                        <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[11px] px-3">Last news</a>
+{{--  second column MAIN CONTENT NEWS--}}
 
-                        @foreach($news as $new)
-                        <section class="" >
-                            {{--   news1     --}}
-                            <div class="border-b">
-                                <div class="flex inline-flex">
-                                    <img src="/app/public/img/" class="w-[30px] h-[30px] pl-3 mt-2">
-                                    <div class="font3 text-[#7fa7cb] pl-4">{{$new['title']}}</div>
-                                </div>
-                                <p class="font4 pl-12">{{substr($new['content'], 0, 240)}} ...</p>
-
-                                <div class="flex inline-flex font4 text-gray-600 py-4 w-full justify-between ">
-                                    <div class="flex inline-flex font4 text-gray-600  w-[70%] items-center">
-                                        <i class="fa fa-calendar fa-sm  p-3 pr-2 pl-12 text-[text-gray-500]"></i>
-                                        <p class=" ">{{ substr($new['created_at'], 0, 10)}}</p>
-                                        <i class="fas fa-comments fa-sm  p-3 pr-1 pl-4 text-[text-gray-500]"></i>
-                                        <p class="pr-4">{{$new['likes']}}</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="ml-1 bi bi-eye-fill " viewBox="0 0 16 16">
-                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                                        </svg>
-                                        <p class="pl-1 ">{{$new['views']}}</p>
-                                    </div>
-                                    <a class=" w-[100px] text-blue-400 inline-flex items-center">
-                                        <div class=" ">Read more..</div>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right text-blue-400" viewBox="0 0 16 16">
-                                                  <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                                                </svg>
+            @yield('content')
 
 
-                                    </a>
-                                </div>
-                            </div>
-
-                        </section>
-
-                        @endforeach
-
-                        <p class="text-blue-400 p-1 pl-4 font3 pt-6 h-[60px] inline-flex items-center">Read all...       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right text-blue-400" viewBox="0 0 16 16">
-                                <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg>
-                        </p>
-                    </div>
-
-
-                {{--      third column   NAVIGATION           --}}
-                    <div class="w-[20%]    ">
-                        <section class="border-t bg-gray-50 text-[#2f506c] p-3 pt-[13px] pl-0">
-                            <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[15px] px-3">Navigation</a>
-                            <ul class="font5 text-[#6c9abf] pl-4">
-                                <li class="py-1 pl-1"> > Main</li>
-                                <li class="py-1 pl-1"> > News</li>
-                                <li class="py-1 pl-1"> > History</li>
-                                <li class="py-1 pl-1"> > Activities</li>
-                                <li class="py-1 pl-1"> > Concours</li>
-                                <li class="py-1 pl-1"> > Olympiades</li>
+{{--      third column   NAVIGATION           --}}
+                    <div class="w-auto    ">
+                        <section class=" bg-gray-50 text-[#2f506c] p-3 pt-[13px] pl-0">
+                            <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[13px] px-3">Navigation</a>
+                            <ul class="font5 text-[#6c9abf] pl-4 flex flex-col w-[150px] ">
+                                <li class="py-1  inline-flex items-center "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                        </svg><a href="{{url('/')}}"> Main</a></li>
+                                <li class="py-1 pr-3 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg><a href="{{url('novitas')}}"> News</a></li>
+                                <li class="py-1 pr-3 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg> History</li>
+                                <li class="py-1 pr-2 inline-flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg> Activities</li>
+                                <li class="py-1 pr-2 inline-flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg> Concours</li>
+                                <li class="py-1 pr-2 inline-flex items-center "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                                    </svg> Olympiades</li>
                             </ul>
                         </section>
+
+{{--                        MOODLE LOGIN--}}
                         <section class=" bg-gray-50 text-[#2f506c] p-3 pt-[13px] pl-0 mt-4 h-[250px]">
                             <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[13px] px-3">Moodle</a>
                             <div class="pl-4">Login</div>
@@ -285,9 +199,10 @@
                                 <input type="search" class="  h-[26px] w-26 m-2  text-grey-100 flex" content="password..."  >
                                 <input type="submit" value="sign in" class="bg-green-600 h-[26px] rounded text-xs  m-2 w-16 text-white">
                             </form>
-
-
                         </section>
+
+
+{{--                        DIRECTORS DETAILS--}}
                         <section class=" bg-gray-50 text-[#2f506c] p-3 pt-[13px] pl-0 mt-4 h-[250px]">
                             <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[13px] px-3 ">Direction</a>
                             <div class="pl-4">Name Surname</div>
@@ -464,7 +379,16 @@
         function go(){
 
         }
+
+
+        //opens new watsapp window
+       function openWindow(){
+            open("https://wa.me/41766377447");
+        }
+
     </script>
+
+
 
     </body>
 </html>

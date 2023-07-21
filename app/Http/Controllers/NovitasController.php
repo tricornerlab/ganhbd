@@ -2,19 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Midmenu;
 use App\Models\Novita;
+use App\Models\Page;
+use App\Models\Social;
 use Illuminate\Http\Request;
 
-class NovitaController extends Controller
+class NovitasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $topmenu = Page::orderby('page_order')->pluck('link', 'title')->toArray();
+        $socials = Social::orderby('icon_order')->get()->toArray();
+        $contact = Contact::where('id', 1)->get()->toArray();
+        $midmenu = Midmenu::orderby('item_order')->pluck('link', 'title')->toArray();
+        $news = Novita::latest()->take(10)->get()->toArray();
+        return view('layouts.default.news')->with([
+            'news' => $news,
+            'topmenu' => $topmenu,
+            'socials' => $socials,
+            'contact' => $contact,
+            'midmenu' => $midmenu,
+        ]);
     }
 
     /**
