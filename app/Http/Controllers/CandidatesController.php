@@ -2,39 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use App\Models\Contact;
 use App\Models\Midmenu;
 use App\Models\Page;
 use App\Models\Social;
-use App\Models\Teacher;
 use Illuminate\Http\Request;
 
-class TeachersController extends Controller
+class CandidatesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
+        //
+    }
+
+
+    public function enroll()
+    {
         $topmenu = Page::where('topmenu', 1)->orderby('page_order')->pluck('link', 'title')->toArray();
         $socials = Social::orderby('icon_order')->get()->toArray();
         $contact = Contact::where('id', 1)->get()->toArray();
         $midmenu = Midmenu::orderby('item_order')->pluck('link', 'title')->toArray();
-        $text = Page::where('id',3)->pluck('content')->toArray();
-        $teachers = Teacher::orderby('surname')->get()->toArray();
-        //print_r($topmenu);
-        return view('layouts.default.teachers')->with([
+        $text = Page::where('id',5)->pluck('content')->toArray();
+        return view ('layouts.default.enroll')->with([
             'topmenu' => $topmenu,
             'socials' => $socials,
             'contact' => $contact,
             'midmenu' => $midmenu,
             'text' => $text,
-            'teachers' => $teachers,
-
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -59,10 +61,10 @@ class TeachersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\Candidate  $candidate
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show(Candidate $candidate)
     {
         //
     }
@@ -70,10 +72,10 @@ class TeachersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\Candidate  $candidate
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit(Candidate $candidate)
     {
         //
     }
@@ -82,10 +84,10 @@ class TeachersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\Candidate  $candidate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, Candidate $candidate)
     {
         //
     }
@@ -93,10 +95,10 @@ class TeachersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Teacher  $teacher
+     * @param  \App\Models\Candidate  $candidate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy(Candidate $candidate)
     {
         //
     }

@@ -5,6 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://kit.fontawesome.com/0ce84235fb.js" crossorigin="anonymous"></script>
+
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
         <title>Ecole Ohalei Menahem</title>
 
         <!-- Fonts -->
@@ -25,10 +34,12 @@
             .font5{font-family:system-ui,-apple-system; font-size: 12px; font-weight: 400; line-height: 20px;}
             h3{font-weight: bold; font-size: 13px;}
 
-
+            a, a:hover{text-underline: none!important; text-decoration: none}
             li{list-style-type: none}
             .sopra0{position: relative; left: 30px; bottom: 120px;}
             .parent{position: static; display: inline-block}
+
+
         </style>
     </head>
 
@@ -38,7 +49,7 @@
     <nav class=" bg-blue-800 text-blue-400 h-[32px] font2 items-center flex ">
         <ul class="flex inline-flex items-center ">
             @foreach($topmenu as $adname => $link)
-            <a href="{{route($link)}}"><li class="list-none  p-2">{{$adname}}   &nbsp; | </li>
+            <a href="{{url($link)}}"><li class="list-none  p-2">{{ucfirst($adname)}}   &nbsp; | </li>
             @endforeach
 
 {{--AUTH--}}
@@ -101,7 +112,7 @@
 
             <section class="flex justify-between h-[113px]  w-full  text-[#6c9abf]  items-center">
                 <div class="flex inline-flex w-[50%]  ">
-                    <a href="{{ url('/app/ganhbd/public/') }}" class="">
+                    <a href="{{ url('/') }}" class="">
                         @foreach($contact as $habad) @endforeach
                         <img href="{{ $habad['photo']}}" class="h-16 w-24 pt-2 pl-8 pl-7" />
                         </a>
@@ -131,13 +142,22 @@
 
 {{--  MID MENU              --}}
     <nav>
-                <ul class="flex inline-flex bg-blue-400 h-10 w-[100%]  text-white  pl-7 font3 uppercase items-center">
-                    <div class="items-center "><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <ul class="flex inline-flex bg-blue-400 h-10 w-[100%]  text-white  pl-7 font3 uppercase items-center position-relative">
+
+                    <div class="dropdown show items-center "><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                         </svg></div>
-                    @foreach($midmenu as $miditem => $midlink)
-                        <a href="{{$midlink}}"><li class="px-3">{{$miditem}}</li></a>
-                    @endforeach
+
+                        <a href="{{url('novitas')}}"><li class="px-3">news</li></a>
+                        @foreach($midmenu as $mid => $a)
+                            <a class=" mx-3"  href="#" role ="btn" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{$mid}}<i class="fa fa-angle-down mx-1"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                {!! $a !!}
+                            </div>
+                        @endforeach
+
                 </ul>
     </nav>
 {{--    BANNER--}}
@@ -168,24 +188,11 @@
                         <section class=" bg-gray-50 text-[#2f506c] p-3 pt-[13px] pl-0">
                             <a class="font3 text-[#2f506c] text-lg border-t-2 border-[#6091ba] pt-[13px] px-3">Navigation</a>
                             <ul class="font5 text-[#6c9abf] pl-4 flex flex-col w-[150px] ">
+                                @foreach($sidemenu as $side=>$link)
                                 <li class="py-1  inline-flex items-center "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                        </svg><a href="{{url('/')}}"> Main</a></li>
-                                <li class="py-1 pr-3 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                    </svg><a href="{{url('novitas')}}"> News</a></li>
-                                <li class="py-1 pr-3 inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                    </svg> History</li>
-                                <li class="py-1 pr-2 inline-flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                    </svg> Activities</li>
-                                <li class="py-1 pr-2 inline-flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                    </svg> Concours</li>
-                                <li class="py-1 pr-2 inline-flex items-center "> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                                    </svg> Olympiades</li>
+                                        </svg><a href="{{$link}}">{{ucfirst($side)}}</a></li>
+                                @endforeach
                             </ul>
                         </section>
 
@@ -291,51 +298,58 @@
         </div>
 
 {{--   FOOTER --}}
-<footer class="w-full">
+<footer class="w-full ">
 
-    <section class="bg-[#444444] text-white flex inline-flex h-[245px] w-full font3 text-[17px]">
-        <div class="w-[20%] p-5 ml-12">
+    <section class="bg-[#444444] text-white flex inline-flex h-auto w-full font3 text-[17px] ">
+        <div class="w-[25%] p-5 ml-12 items-center">
             <p>Navigation</p>
             <ul class="font5 text-[#6c9abf] pl-4">
-                <li class="py-1 pl-1"> > Main</li>
-                <li class="py-1 pl-1"> > News</li>
-                <li class="py-1 pl-1"> > History</li>
-                <li class="py-1 pl-1"> > Study materials</li>
-                <li class="py-1 pl-1"> > Jobs</li>
-                <li class="py-1 pl-1"> > Site map</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> Main</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> News</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> History</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> Study materials</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> Jobs</li>
+                <li class="py-1 pl-1 flex inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short mr-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg> Site map</li>
 
             </ul>
         </div>
-        <div class="w-[20%] p-5 ml-12">Questionnaire</div>
-        <div class="w-[20%] p-5 ml-12">Statistics</div>
-        <div class="w-[20%] p-5">
-            <p>Contacts</p>
-            <data class="font5 text-[#6c9abf]  ">
-                <div class="flex inline-flex pl-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                    </svg>
-                    <div class="pl-2">Centre ville 12</div>
-                </div>
-
-                <div class="flex inline-flex pl-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                    </svg>
-                    <div class="pl-2">43‒30‒95, 43‒08‒88</div>
-                </div>
-
-
-                <div class="flex inline-flex pl-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
-                    </svg>
-                    <div class="pl-2">contact@habad.ch</div>
-                </div>
-            </data>
+        <div class="w-[20%] p-5 ml-12 items-center">
+            Questionnaire
         </div>
-    </section>
+        <div class="w-[20%] p-5 ml-12 items-center">
+            Statistique
+        </div>
+        <div class="w-[24%] p-5 ml-12 items-center m-auto">
+            Contacts
+            <li class="flex inline-flex font5 items-center text-[#6c9abf]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill mr-2" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg> Centreville 12</li>
+            <li class="flex inline-flex font5 items-center text-[#6c9abf]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill mr-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg> 022 860 8613</li>
+            <li class="flex inline-flex font5 items-center text-[#6c9abf]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill mr-2" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                </svg>
+                <a href="mailto:office@habadgeneve.ch">office@habadgeneve.ch</a>
+            </li>
 
+        </div>
+
+    </section>
     <div class="flex justify-center  sm:items-center sm:justify-between bg-[#2b2b2b] font2 h-[36px]">
         <div class="text-center  text-gray-500 sm:text-left">
             <div class="flex items-center ml-4">
@@ -386,7 +400,13 @@
             open("https://wa.me/41766377447");
         }
 
+
+
+
     </script>
+
+
+</script>
 
 
 

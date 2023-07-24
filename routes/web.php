@@ -34,10 +34,15 @@ require __DIR__.'/auth.php';
 Route::get('/advantages', 'PagesController@advantages')->name('advantages');
 Route::get('/program', 'PagesController@program')->name('program');
 Route::get('/teachers', 'TeachersController@index')->name('teachers');
-Route::get('/enroll', 'PagesController@index')->name('enroll');
-Route::get('/fees', 'PagesController@index')->name('fees');
+Route::get('/enroll', 'CandidatesController@enroll')->name('enroll');
+Route::get('/fees', 'PagesController@fees')->name('fees');
 Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/partners', 'PagesController@index')->name('partners');
+Route::get('/partners', 'PagesController@partners')->name('partners');
+Route::get('/suppliers', 'PagesController@suppliers')->name('suppliers');
 Route::get('/history', 'PagesController@history')->name('history');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/eduplan', 'PagesController@history')->name('eduplan');
+Route::get('/extras', 'PagesController@history')->name('extras');
+Route::get('/projects', 'PagesController@history')->name('projects');
 
 Route::resource('/novitas', 'NovitasController');

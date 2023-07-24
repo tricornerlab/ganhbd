@@ -18,7 +18,8 @@ class NovitasController extends Controller
      */
     public function index()
     {
-        $topmenu = Page::orderby('page_order')->pluck('link', 'title')->toArray();
+        $topmenu = Page::where('topmenu', 1)->orderby('page_order')->pluck('link', 'title')->toArray();
+        $sidemenu = Page::where('topmenu', 0)->orderby('page_order')->pluck('link', 'title')->toArray();
         $socials = Social::orderby('icon_order')->get()->toArray();
         $contact = Contact::where('id', 1)->get()->toArray();
         $midmenu = Midmenu::orderby('item_order')->pluck('link', 'title')->toArray();
@@ -29,6 +30,8 @@ class NovitasController extends Controller
             'socials' => $socials,
             'contact' => $contact,
             'midmenu' => $midmenu,
+            'sidemenu' => $sidemenu,
+
         ]);
     }
 

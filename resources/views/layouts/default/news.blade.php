@@ -11,9 +11,10 @@
     <section class="m-8 bg-gray-50 p-5  mr-5">
         {{--   news1     --}}
         <div class="">
-            <div class="flex inline-flex">
-                <img src="/app/public/img/" class="w-[30px] h-[30px] pl-3 mt-2">
+            <div class="flex flex-col items-center">
+
                 <div class="font3 text-xl text-[#7fa7cb] pl-4">{{$new['title']}}</div>
+                <img src="/app/ganhbd/public/img/{{$new['photo']}}" class="w-[400px] h-auto  m-4">
             </div>
             <p class="font3 pl-12 text-gray-800">{{ $new['content'] }} ...</p>
 
