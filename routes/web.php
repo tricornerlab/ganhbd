@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'PagesController@index');
+
+
 Route::get('/inner', function () {
     return view('inner');
 });
@@ -25,3 +27,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+
+//admenu
+Route::get('/advantages', 'PagesController@advantages')->name('advantages');
+Route::get('/program', 'PagesController@program')->name('program');
+Route::get('/teachers', 'TeachersController@index')->name('teachers');
+Route::get('/enroll', 'CandidatesController@enroll')->name('enroll');
+Route::get('/fees', 'PagesController@fees')->name('fees');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/partners', 'PagesController@partners')->name('partners');
+Route::get('/suppliers', 'PagesController@suppliers')->name('suppliers');
+Route::get('/history', 'PagesController@history')->name('history');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/eduplan', 'PagesController@history')->name('eduplan');
+Route::get('/extras', 'PagesController@history')->name('extras');
+Route::get('/projects', 'PagesController@history')->name('projects');
+
+Route::resource('/novitas', 'NovitasController');
